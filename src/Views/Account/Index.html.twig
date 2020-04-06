@@ -1,0 +1,81 @@
+{% extends 'Base.html.twig' %}
+{% block contents %}
+    <div class="row">
+        <div class="col-1">
+                <h1 class="center">Account</h1>
+                <p class="lead">Below is your account information.</p>
+        </div>
+    </div>
+    <div class="row" id="account">
+
+        <div class="col-2">
+            <div class="row">
+                <div class="col-1 col-3-grey">
+                    <h4>Account Information</h4>
+                    <p><b class="label">Account Type: </b> {{ model.Role.Role }}</p>
+                    <p><b class="label">Name: </b> {{ model.FirstName }} {{ model.LastName }}</p>
+                    <p><b class="label">Phone: </b> {{ model.PhoneNumber }}</p>
+                    <p><b class="label">Email: </b>{{ model.Email }}</p>
+                    <hr>
+                    <h4>Address</h4>
+                    <p>
+                        {% for address in model.address %}
+                            <b class="label">{{address.AddressType.Type}}: </b>
+                            {{ address.Number }} {{ address.StreetName }} {{ address.Suburb }} {{ address.State }}
+                        {% endfor %}
+
+                    </p>
+                    <p class="ext-mrg-top"><a class="btn">Update Account</a></p>
+                </div>
+                <div class="col-1 col-3-grey">
+                    <h4>Children</h4>
+                    {% for child in model.Child %}
+                        <p><label class="label">Name: </label>{{ child.FirstName }} {{ child.LastName }}</p>
+                        <p><label class="label">DOB: </label>{{ child.DOB }}</p>
+                        <hr>
+                    {% endfor %}
+                    <p class="ext-mrg-top"><a class="btn">Update Children</a></p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-1 col-3-pad">
+            <h4 class="ext-mrg-bottom">Organisation Features</h4>
+            <p><a id="target" class="btn light width-100" href="#">Dashboard</a></p>
+            <p><a class="btn light width-100" href="/event/add">Add a child</a></p>
+            <p><a class="btn light width-100" href="/event/add">View signed up events</a></p>
+            <p><a class="btn light width-100" href="/event/add">Register sport alerts</a></p>
+            <p><a class="btn light width-100" href="/event/add">Update sport alerts</a></p>
+        </div>
+
+
+    </div>
+    <script>
+        $( "a" ).click(function() {
+            alert( "Handler for .click() called." );
+        });
+
+        function test(){
+            //alert("adada");
+        }
+        function SearchForm(){
+
+            var brand=$('#brand').val();
+
+            $.ajax({
+                type:'POST',
+                url: "/child/add",
+                success: function(response) {
+
+                    $('#account .col-2').html(response);
+                }});
+            return false;
+        }
+    </script>
+
+    <div id="all_data_search"></div>
+    <input type="button" onClick="SearchForm()">
+{% endblock %}

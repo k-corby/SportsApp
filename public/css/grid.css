@@ -1,0 +1,111 @@
+/*
+GENERAL GRID AND CONTAINER STYLES
+Applied to all grid and container elements within the application
+*/
+main{
+    /*margin-top:290px;*/
+    margin-top:100px;
+}
+footer{
+    padding:40px 0 20px 0;
+    margin-top:70px;
+}
+
+
+
+.container {
+    margin: 0 auto;
+    max-width: 1140px;
+    padding:0 20px;
+}
+
+footer .container{
+    padding:10px 0;
+}
+
+footer .container:first-child .row{
+    padding-bottom: 30px;
+    border-bottom: 1px solid #FFFFFF15;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.col-1 {
+    flex:1;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.col-1-multiple{
+    flex:1 1 auto;
+}
+
+.col-2{
+    flex:2;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.col-3{
+    flex:3;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.col-3-grey{
+    /*width:28%;max-width: 328px;*/
+    background-color: #fafafa;
+    padding:15px 25px;
+    margin:0 20px 20px 0;
+
+}
+
+.col-3-pad{
+    padding:15px 25px;
+    margin:0 20px 20px 0;
+}
+.col-3-grey hr{
+    background-color:#dcdcdc;
+    margin:1.5rem 0;
+}
+/*
+.col-3-grey:first-child{
+    margin-left:0;
+}
+
+.col-3-grey:last-child{
+    margin-right: 0;
+}*/
+
+/*.col-3{
+    flex-grow: 1;
+    flex-wrap: wrap;
+    margin:0 10px;
+    min-width: 200px;
+}
+
+.col-3:first-child{
+    margin-left:0;
+}
+
+
+.col-3:last-child{
+    margin-right:0;
+}*/
+
+.col-right {
+    margin-left: auto;
+    justify-content: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 600px){
+    main{
+        margin-top:100px;
+    }
+}

@@ -1,0 +1,53 @@
+index:
+  path: /
+  controller: App\Controller\HomeController::index
+app_homepage:
+  path: /
+  controller: App\Controller\HomeController::index
+
+app_event_add:
+  path: /event/add
+  controller: App\Controller\EventController::add
+app_event_all:
+  path: /event/all/{page}
+  controller: App\Controller\EventController::all
+  defaults:
+    page: 1
+app_event_show:
+  path: /event/show/{id}
+  controller: App\Controller\EventController::show
+  requirements:
+    page: '\d+'
+app_event_delete:
+  path: /event/delete/{id}
+  controller: App\Controller\EventController::delete
+  requirements:
+    page: '\d+'
+
+app_organisation_add:
+  path: /organisation/add
+  controller: App\Controller\OrganisationController::add
+app_organisations_all:
+  path: /organisation/all
+  controller: App\Controller\OrganisationController::all
+
+
+app_account_update:
+  path: /account/update
+  controller: App\Controller\AccountController::update
+app_account_register:
+  path: /account/register
+  controller: App\Controller\AccountController::register
+app_account_login:
+  path: /account/login
+  controller: App\Controller\AccountController::login
+app_account_register2:
+  path: /account/registeracc
+  controller: App\Controller\AccountController::registerAcc
+
+app_security_login:
+  path: /security/login
+  controller: App\Controller\SecurityController::login
+app_security_logout:
+  path: /security/logout
+  controller: App\Controller\SecurityController::logout

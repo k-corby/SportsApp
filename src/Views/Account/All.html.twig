@@ -1,0 +1,35 @@
+{% extends 'Base.html.twig' %}
+
+{% block contents %}
+    <div class="row">
+        <div class="col">
+            <div class="jumbotron">
+                <h1 class="display-3">Account</h1>
+                <p class="lead">Below are the all the accounts in the system.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+            {#
+            {{ dump(Model[0].Id) }}
+            {{ dump(Model[0].Address[1].StreetName) }}
+            #}
+        {% for account in Model %}
+            <div class="col-1 col-1-multiple col-3-grey">
+                <h4>Account Information</h4>
+                <p><b class="label">Account Type: </b> {{ account.Role.Role }}</p>
+                <p><b class="label">Name: </b> {{ account.FirstName }} {{ account.LastName }}</p>
+                <p><b class="label">Phone: </b> {{ account.PhoneNumber }}</p>
+                <p><b class="label">Email: </b>{{ account.Email }}</p>
+                <hr>
+                <h4>Address</h4>
+                {% for address in account.Address %}
+                    <p>
+                        <b class="label">Address: </b>{{ address.Number }} {{ address.StreetName }} {{ address.Suburb }} {{ address.State }} {{ address.AddressType.Type }}
+                    </p>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

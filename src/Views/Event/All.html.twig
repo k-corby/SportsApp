@@ -1,0 +1,46 @@
+{% extends 'Base.html.twig' %}
+
+{% block contents %}
+    <div class="row">
+        <div class="col-1">
+            <div class="jumbotron">
+                <h1 class="display-3">Events</h1>
+                <p class="lead">Below are the latest events offered by Queensland Sporting Organisations.</p>
+            </div>
+        </div>
+    </div>
+    {% set coords = [] %}
+    {% for event in Model["Event"]|batch(2) %}
+        <div class="row">
+            {% for item in event %}
+                <div class="col-1 col-3-grey">
+                    <h4>{{ item.Name }}</h4>
+                    <div class="map" id="map{{ item.Id }}"></div>
+                    <p><b class="label">Date: </b>ADD DATE</p>
+                    <p><b class="label">Location:</b> {{ item.Lat }}, {{ item.Lng }}</p>
+                    <p><b class="label">Information: </b>{{ item.Description }}</p>
+                    <p><a class="btn btn-grey" href="/event/show/{{ item.id }}">More information</a></p>
+                    {% set coords = coords|merge([{'id': item.Id, 'lat' : item.Lat, 'lng' : item.Lng }]) %}
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+    <div class="row">
+        <div class="col-1">
+            <div class="text-center">
+            {% for i in 1..Model["Count"] %}
+                <a class="btn btn-grey" href="/event/all/{{i}}">{{i}}</a>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var coords = {{ coords|json_encode|raw }}
+        var zoom = 1
+    </script>
+    <script src="/js/maps.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB78rp2qOD1SQLt_hZFLCe2wVUG0oV6LO0&callback=initMap">
+    </script>
+{% endblock %}

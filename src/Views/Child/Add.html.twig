@@ -1,0 +1,10 @@
+{% block contents %}
+    <div class="row">
+        <div class="col-1">
+            <h2>Add a child</h2>
+            {% block csrf_token_widget %}
+                {{ form(form) }}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

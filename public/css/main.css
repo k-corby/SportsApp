@@ -1,0 +1,417 @@
+body {
+    font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgb(85, 89, 92);
+    margin: 0;
+    letter-spacing: 0.05rem;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+hr {
+    margin-top:20px;
+    background-color: #CCCCCC;
+    height: 1px;
+    border: 0;
+}
+
+
+/** NAVIGATION **/
+nav {
+    overflow: hidden;
+    /*position: fixed; /* Set the navbar to fixed position */
+    /*top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    z-index:100;
+}
+
+nav .nav-row-top {
+    padding: 34px 0px;
+}
+
+nav .nav-row-bottom {
+    background-color: #f5f5f5;
+}
+
+nav .nav-row-bottom .col {
+    width: 100%;
+}
+
+nav .nav-row-cent {
+    margin: 0 auto;
+    max-width: 1140px;
+    padding:0 20px;
+}
+
+nav .navbar .brand {
+    font-weight: 900;
+    font-size: 20px;
+    margin-top: -1px;
+    float: left;
+}
+
+nav .navbar {
+    background-color: #FDFDFD;
+    overflow: hidden;
+    font-size: 0.765625rem;
+    text-transform: uppercase;
+}
+
+nav .nav-row-bottom .col,
+nav .navbar ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+nav .navbar li {
+    display: block;
+    float: left;
+    list-style: none;
+    text-align: center;
+    width: 19.8%;
+    border-right: 1px solid #e6e6e6;
+}
+
+nav .navbar li:first-child {
+    border-left: 1px solid #e6e6e6;
+}
+
+
+nav .navbar li:hover {
+    background-color: #EFEFEF;
+}
+
+
+/* Style the links inside the navigation bar */
+nav .navbar li a {
+    text-align: center;
+    /*float: left;*/
+    display: list-item;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: #555;
+    padding: 25px 0px;
+    margin: 0 0 -2px;
+    width: 100%;
+}
+
+nav .navbar li .dropdown-menu a{
+    font-size: 0.8rem;
+    color: #888888;
+}
+
+/* Change the color of links on hover */
+nav .navbar li a:hover {
+
+    color: black;
+}
+
+/* Add an active class to highlight the current page */
+nav .navbar a.active {
+
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+nav .navbar .icon {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 10px;
+    font-size: 1.5rem;
+}
+
+
+/* DROP DOWN */
+nav .dropdown-toggle{
+    /*position: relative;*/
+}
+
+nav .dropdown-toggle .nav-link::after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+}
+
+
+
+nav .dropdown-menu {
+    display: none;
+    /*position: fixed;*/
+    position:absolute;
+    background-color: #f9f9f9;
+    border: 1px solid #eaeaea9e;
+    border-top:0;
+    min-width: 226px;
+    z-index: 1;
+    /*margin-top: 71px;*/
+    margin-left: -1px;
+}
+
+nav .dropdown-toggle:hover .dropdown-menu{
+    display:block;
+}
+
+nav .dropdown-menu a{
+    border-bottom:1px solid #eaeaeab0;
+}
+
+nav .dropdown-menu a:last-child{
+    border-bottom:0;
+}
+
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 510px){
+
+}
+@media screen and (max-width: 800px){
+    nav .form-inline{
+        display: none;
+    }
+
+    nav .navbar li {
+        width:19.7%;
+    }
+
+}
+@media screen and (max-width: 600px) {
+    nav .navbar img{
+        width:280px;
+    }
+
+    nav .navbar li {
+        display: none;
+    }
+
+    nav .navbar .search {
+        display: none;
+    }
+
+    nav .navbar .icon {
+        display: block;
+        top: 43px;
+        right: 25px;
+    }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+    nav .navbar.responsive {
+        position: relative;
+    }
+
+    nav .navbar.responsive .icon {
+        top: 43px;
+        right: 25px;
+    }
+
+    nav .navbar.responsive li:first-child{
+        border-top:3px solid #dcdcdc;
+    }
+
+    nav .navbar.responsive li {
+        display: list-item;
+        text-align: left;
+        width: 100%;
+        border-bottom:1px solid #dcdcdc;
+    }
+}
+
+/* FOOTER */
+footer{
+    font-size:0.90rem;
+    background-color: #202020;
+}
+
+footer .footer-top .container{
+    padding:45px 0 30px 0;
+    border-bottom:1px solid #000;
+}
+
+
+footer .footer-mid .row{
+    margin-top:10px;
+}
+
+footer .footer-bottom{
+    padding:20px 0;
+}
+
+footer .label{
+    font-weight:700;
+}
+
+footer ul{
+    padding: 0;
+}
+
+footer li{
+    display:block;
+    margin-bottom:10px;
+}
+
+footer .footer-link{
+    display: block;
+    width: 274px;
+    padding: 12px 15px;
+    text-transform: uppercase;
+    margin-bottom: 13px;
+    background-color: #ffffff0f;
+    color: #e8e8e8;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+    font-size: 0.75rem;
+}
+
+footer a, footer, footer .label{
+    color:#acacac;
+}
+
+footer h5{
+    color:#e8e8e8;
+    margin-bottom:25px;
+}
+
+footer h6{
+    color:#737373;
+    font-size: 0.7rem;
+}
+
+/* SOCIAL MEDIA */
+footer .fa {
+    padding:12px;
+    font-size: 20px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+footer  .fa:hover {
+    opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+footer  .fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Twitter */
+footer .fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+
+/* UI Elements */
+.text-center{
+    text-align: center;
+}
+
+.copyright{
+    font-size:0.8rem;
+    color:#989898;
+    font-weight:600;
+}
+
+.group-content {
+    padding: 0rem 2rem;
+    background-color: #FFFFFF;
+}
+
+.lead{
+    color: #909090;
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+.label{
+    text-transform: uppercase;
+    letter-spacing: 0.125rem;
+    margin: 0.2rem 0;
+    font-weight: 800;
+    font-size:0.8rem;
+    line-height: 1.2;
+    color: #774d4d;
+}
+
+.splash-img {
+    object-fit: cover;
+    margin: 25px 0;
+    width: 100%;
+    height: 337px;
+}
+
+.map {
+    width: 100%;
+    height: 150px;
+    background-color: grey;
+}
+
+.map-single{
+    width:100%;
+    height:300px;
+}
+
+.ext-mrg-bottom{
+    margin-bottom:1.8rem;
+}
+
+
+.ext-mrg-top{
+    margin-top:1.8rem;
+}
+
+.border-right{
+    border-right:1px solid #F1F1F1;
+}
+
+.content-grey{
+    background-color: #f7f7f7;
+    padding:7px 25px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+    margin: 0.8rem 0rem;
+    line-height: 1.2;
+    color: #1a1a1a;
+    letter-spacing: 0.1rem;
+}
+
+h1 {
+    font-size: 3.7rem;
+    font-weight: 600;
+}
+h4{
+    font-weight:800;
+    font-size:1.1rem;
+    margin:1.2rem 0;
+}
+
+h5{
+    font-size:1rem;
+}
+
+
+/** HEADINGS **/
+
+

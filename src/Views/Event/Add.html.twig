@@ -1,0 +1,22 @@
+{% extends 'Base.html.twig' %}
+{% block contents %}
+    <div class="row">
+        <div class="col-1">
+            <div class="group-content">
+                <h1 class="center">Add an Event</h1>
+                <p class="lead">Below is a form to add an Event.</p>
+                <br>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            {% block csrf_token_widget %}
+                {{ form(form) }}
+            {% endblock %}
+        </div>
+        <div class="col-1">
+
+        </div>
+    </div>
+{% endblock %}
